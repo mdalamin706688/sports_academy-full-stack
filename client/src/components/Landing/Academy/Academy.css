@@ -1,0 +1,11 @@
+table {
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 20px; /* Adjust the value to increase/decrease the gap */
+  }
+  
+  th,
+  td {
+    padding: 20px; /* Adjust the value to increase/decrease the padding */
+  }
+  

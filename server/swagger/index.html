@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Swagger UI</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/swagger-ui-dist/swagger-ui.css" />
+
+  <style>
+    body {
+      background-color: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .premium-button {
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 20px;
+      color: #fff;
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: 2px;
+      transition: background-color 0.3s ease;
+      border: none;
+      background-color: #007bff;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    }
+
+    .premium-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div id="swagger-ui"></div>
+  <h1>Sports Academy and Training Center's All Backend Api Swagger Documnetation</h1>
+  <div class="button-container">
+    <a href="admin.html" class="premium-button">Admin</a>
+    <a href="instructor.html" class="premium-button">Instructor</a>
+    <a href="student.html" class="premium-button">Student</a>
+    <a href="user.html" class="premium-button">User</a>
+    <a href="enroll.html" class="premium-button">Enrollment</a>
+    <a href="class.html" class="premium-button">Class</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swagger-ui-dist/swagger-ui-bundle.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swagger-ui-dist/swagger-ui-standalone-preset.js"></script>
+</body>
+</html>

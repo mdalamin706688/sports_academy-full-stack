@@ -1,0 +1,101 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Documentation",
+    "description": "Documentation for the API endpoints",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Development server"
+    }
+  ],
+  "paths": {
+    "/classes/{classId}/enroll": {
+      "post": {
+        "tags": ["Enrollment"],
+        "summary": "Enroll user in class",
+        "description": "Enroll a user in a class",
+        "parameters": [
+          {
+            "name": "classId",
+            "in": "path",
+            "description": "Class ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User enrolled in class successfully"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Class not found"
+          },
+          "500": {
+            "description": "Server error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    },
+    "schemas": {
+      "Enrollment": {
+        "type": "object",
+        "properties": {
+          "user": {
+            "type": "string",
+            "description": "User ID",
+            "example": "64b14229304fa2be376220a7"
+          },
+          "class": {
+            "type": "string",
+            "description": "Class ID",
+            "example": "64b17f54ce6a465d9a90b169"
+          },
+          "paymentIntentId": {
+            "type": "string",
+            "description": "Payment Intent ID",
+            "example": "pi_1234567890"
+          },
+          "paymentStatus": {
+            "type": "string",
+            "enum": ["paid", "pending"],
+            "default": "pending",
+            "description": "Payment Status",
+            "example": "pending"
+          },
+          "enrollmentDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Enrollment Date",
+            "example": "2023-07-14T12:40:09.348Z"
+          }
+        },
+        "required": ["user", "class", "paymentIntentId"]
+      }
+    }
+  }
+}

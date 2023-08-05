@@ -1,0 +1,9 @@
+/* Example CSS for sliding transition */
+.slide-left {
+    transition: transform 0.5s ease;
+  }
+  
+  .slide-right {
+    transition: transform 0.5s ease;
+  }
+  
